@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import url('../css/variables.css');
+
 @import url('../css/navbar.css');
+
 
 * {
     margin: 0;
@@ -9,15 +12,38 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 #container {
     background-image: url('../images/background-mobile.png');
     background-size: contain;
     height: 400vh;
 }
 
+
+.title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--color-neutral-8);
+    font-weight: 700;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary-1);
+    position: absolute;
+    bottom: 0;
+    border-radius: 30px;
+}
+
+
 a.btn {
     text-decoration: none;
 }
+
 
 .btn {
     padding: 10px 20px;
@@ -30,29 +56,33 @@ a.btn {
     transition: background-color 0.3s ease;
 }
 
+
 .btn-mobile {
     font-size: 1.5rem;
 }
 
+
 .btn-default {
     background-color: var(--color-primary-1);
     color: var(--color-neutral-0);
-
-    &:houver {
-        background-color: var(--color-primary-2);
-    }
 }
+
+.btn-default:hover {
+    background-color: var(--color-primary-2);
+}
+
 
 .btn-outlined {
     background-color: transparent;
     color: var(--color-primary-1);
     border: 2px solid var(--color-primary-1);
-
-    &:hover {
-        background-color: var(--color-primary-1);
-        color: var(--color-neutral-0);
-    }
 }
+
+.btn-outlined:hover {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+}
+
 
 #home {
     display: flex;
@@ -62,35 +92,114 @@ a.btn {
     min-height: calc(100vh - 96px);
     padding: 32px 4%;
     padding-top: clamp(0px, 5vw, 32px);
+}
 
-    .home-image {
-        width: clamp(300px, 50%, 400px);
-    }
 
-    .home-title {
-        color: var(--color-neutral-8);
-        text-align: center;
-        font-size: clamp(3rem, 5w, 4.3rem);
-        text-transform: uppercase;
-        line-height: 1.2;
-        max-width: 700px;
+.home-image {
+    width: clamp(300px, 50%, 400px);
+}
 
-        span {
-            color: var(--color-primary-1);
-        }
-    }
 
-    .home-description {
-        color: var(--color-neutral-9);
-        text-align: center;
-        font-size: 1rem;
-        font-weight: 500;
-        max-width: 600px;
-    }
+.home-title {
+    color: var(--color-neutral-8);
+    text-align: center;
+    font-size: clamp(3rem, 5vw, 4.3rem);
+    text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 700px;
+}
 
-    .home-actions {
+.home-title span {
+    color: var(--color-primary-1);
+}
+
+
+.home-description {
+    color: var(--color-neutral-9);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 600px;
+}
+
+
+.home-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+
+#trending {
+    padding: 32px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    min-height: calc(100vh - 96px);
+}
+
+
+.trending-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+
+.trending-card {
+    position: relative;
+}
+
+
+.trending-card img {
+    width: clamp(250px, 25vw, 350px);
+}
+
+
+.trending-rate {
+    background-color: var(--color-neutral-0);
+    position: absolute;
+    bottom: 80px;
+    right: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.trending-rate i {
+    color: var(--color-secondary-1);
+}
+
+
+.trending-card-description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-neutral-8);
+}
+
+
+.trending-card-description span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-neutral-7);
+}
+
+
+@media (min-width: 768px) {
+
+    #trending .trending-cards {
+
         display: flex;
-        gap: 12px;
-        margin-top: 12px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+
     }
+
 }
